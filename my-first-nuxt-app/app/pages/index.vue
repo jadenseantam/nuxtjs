@@ -2,9 +2,7 @@
 
 <template>
   <div>
-    Page: index
     <Counter />
-    <img src="/nuxt.jpeg" alt="">
   </div>
 </template>
 

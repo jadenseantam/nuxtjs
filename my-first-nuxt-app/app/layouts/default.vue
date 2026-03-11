@@ -4,9 +4,8 @@
   <div>
     <nav>
       <NuxtLink class="navbar" to="/">Home</NuxtLink>
-      <NuxtLink class="navbar" to="/about">About</NuxtLink>
-      <NuxtLink class="navbar" to="/docs">Docs</NuxtLink>
       <NuxtLink class="navbar" to="/users">Users</NuxtLink>
+      <NuxtLink class="navbar" to="/fetch">Fetch</NuxtLink>
     </nav>
     <slot />
   </div>
