@@ -6,6 +6,7 @@
       <NuxtLink class="navbar" to="/">Home</NuxtLink>
       <NuxtLink class="navbar" to="/users">Users</NuxtLink>
       <NuxtLink class="navbar" to="/fetch">Fetch</NuxtLink>
+      <NuxtLink class="navbar" to="/api-fetch">API-fetch</NuxtLink>
     </nav>
     <slot />
   </div>
