@@ -1,0 +1,6 @@
+{
+  "name": "nuxtjs-monorepo-master",
+  "scripts": {
+    "build": "mkdir -p dist && for d in */; do if [ -f \"$d/package.json\" ]; then export P_NAME=${d%/}; echo \"🚀 Building $P_NAME...\"; cd \"$d\" && npm install && NUXT_APP_BASE_URL=/$P_NAME/ NUXT_NITRO_PRESET=netlify npm run build && cd .. && mv \"$d/.output/public\" \"dist/$P_NAME\"; fi; done"
+  }
+}
