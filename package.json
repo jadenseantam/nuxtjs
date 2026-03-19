@@ -1,6 +1,6 @@
 {
-  "name": "nuxtjs-monorepo-master",
+  "name": "nuxtjs-monorepo",
   "scripts": {
-    "build": "mkdir -p dist && for d in */; do if [ -f \"$d/package.json\" ]; then export P_NAME=${d%/}; echo \"🚀 Building $P_NAME...\"; cd \"$d\" && npm install && NUXT_APP_BASE_URL=/$P_NAME/ NUXT_NITRO_PRESET=netlify npm run build && cd .. && mv \"$d/.output/public\" \"dist/$P_NAME\"; fi; done"
+    "build": "rm -rf dist && mkdir -p dist && for d in */ ; do if [ -f \"$d/package.json\" ]; then P_NAME=${d%/}; echo \"Building $P_NAME...\"; cd \"$d\" && npm install && NUXT_APP_BASE_URL=/$P_NAME/ NUXT_NITRO_PRESET=netlify npm run build && cd .. && cp -r \"$d/.output/public/.\" \"dist/$P_NAME/\"; fi; done && echo '<html><body style=\"background:#111;color:#fff;font-family:sans-serif;padding:50px;\"><h1>My Nuxt Projects</h1><ul>' > dist/index.html && for d in dist/*/; do NAME=$(basename \"$d\"); echo \"<li><a style='color:#00dc82' href='/$NAME/'>$NAME</a></li>\" >> dist/index.html; done && echo '</ul></body></html>' >> dist/index.html"
   }
 }
